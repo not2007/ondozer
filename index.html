@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>CoinDozerMagician</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+			}
+			
+			body {
+				/*overflow: hidden;*/
+			}
+			
+			.bg {
+				/*width: 100%;*/
+				height: auto;
+				/*position: absolute;
+				left: 0;
+				top: 0;*/
+				overflow: hidden;
+			}
+			
+			.logo {
+				position: absolute;
+				/*margin-top: 20px;
+				margin-left: 20px;*/
+				left: 15%;
+				top: 35px;
+			}
+			
+			.contentBox {
+				width: 100%;
+				/*background-color: gold;*/
+				flex-direction: column;
+				position: relative;
+				left: 0;
+				margin-top: 150px;
+			}
+			
+			.phone {
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			
+			#all {
+				overflow: hidden;
+				/*background-image: url(img/background.jpg);
+				background-size: cover;*/
+				/*background-repeat: no-repeat;*/
+				/*background-repeat-x: inherit;*/
+				/*background: linear-gradient(to bottom right, #fba739, #fb4939);*/
+				background-image: url(background.png);
+				background-size: cover;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 100vw;
+				height: 100vh;
+				padding-bottom: 100px;
+			}
+			
+			.text_content {
+				width: 80%;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				color: white;
+				font-size: 24px;
+				/*background-color: black;*/
+				margin-top: 100px;
+				text-decoration: none;
+				/*text-align: center;*/
+				/*text-align: left;*/
+			}
+			
+			.download {
+				margin-top: 74px;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			
+			.newdownload {
+				margin-top: 120px;
+				width: 484px;
+				height: 88px;
+				border-radius: 60px;
+				background-color: white;
+				color: rgb(248, 42, 13);
+				font-size: 32px;
+			}
+			
+			@media only screen and (min-width: 1024px) {
+				.contentBox {
+					/*flex-direction: row;*/
+					width: 1413px;
+					position: relative;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				.text_content {
+					width: 57.6%;
+					left: 0;
+					float: left;
+					transform: none;
+					/*width: auto;*/
+					margin-top: 0;
+					margin-left: 100px;
+				}
+				.phone {
+					left: 0;
+					float: left;
+					transform: none;
+				}
+				#all {
+					height: 100vh;
+					padding-bottom: 0px;
+				}
+				.download {
+					left: 0;
+					transform: translateX(0);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="all">
+			<!--<img src="img/background.jpg" class="bg" />-->
+			<img src="logo.png" class="logo" />
+
+			<div class="contentBox">
+				<img src="image.png" class="phone" />
+				<div class="text_content">
+					<div style="font-size: 24px;margin-top: 37px;">Download APP</div>
+					<div style="font-size: 30px;color: #ffffff;">Free Download CoinDozerMagician</div>
+					<p style="font-size: 42px;margin-top:86px;color: #fffc00;font-weight: 600;">Get lucky with Coin Dozer Magician</p>
+					<div style="font-size: 30px;color: #ffffff;">Customer service: rushgg4115@icloud.com</div>
+					<!--<p style="font-size: 24px;margin-top: 20px;">官方客服微信：qicai0066</p>-->
+					<p style="font-size: 28px;margin-top: 60px;margin-left: -13px;">-True experience with the real coin pusher！</p>
+					<p style="font-size: 28px;margin-top: 24px;margin-left: -13px;">-Hit lucky pattern to win huge coin bonus！</p>
+					<p style="font-size: 28px;margin-top: 24px;margin-left: -13px;">-Relax and collect prizes. Too addictive to stop!</p>
+					<img src="Download.png" class="download" id="download" />
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="//b27u.t4m.cn/applink.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				//				console.log(getQueryString("inviteCode"))
+				//				console.log(getQueryString("channel"))
+				var os = getOsVersion();
+				if(os == 'android') {
+					MobLink([{
+						el: "#download",
+						path: "demo/a",
+						params: {
+							inviteCode: getQueryString("inviteCode"),
+							channel: getQueryString("channel"),
+							default: "default",
+						}
+					}]);
+					setTimeout(function() {
+						document.getElementById('download').click();
+					}, 100)
+				} else {
+					// MobLink([{
+					// 	el: "#download",
+					// 	path: "demo/a",
+					// 	params: {
+					// 		inviteCode: '123123',
+					// 		channel: 'test',
+					// 		default: "default",
+					// 	}
+					// }]);
+					document.getElementById('download').addEventListener('click', function() {
+						window.location.href = 'https://apps.apple.com/cn/app/id1514070121';
+					})
+//					document.getElementById('download').click();
+					//					window.location.href = 'https://q.zhuagewawa.com/appledownload/?id=1370800734';
+				}
+			}
+
+			function getQueryString(t) {
+				var e = new RegExp("(^|AAA)" + t + "=([^AAA]*)(AAA|$)", "i"),
+					o = window.location.search.substr(1).match(e),
+					n = "";
+				return null != o && (n = o[2]), (o = e = null) == n || "" == n || undefined == n ? undefined : n
+			}
+
+			function getOsVersion() {
+				var u = navigator.userAgent,
+					version = '';
+				if(u.indexOf('Mac OS X') > -1) {
+					//ios
+					var regStr_saf = /OS [\d._]*/gi;
+					var verinfo = u.match(regStr_saf);
+					version = 'ios';
+				} else if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+					//android
+					version = 'android';
+				} else if(u.indexOf('BB10') > -1) {
+					//黑莓bb10系统
+					version = 'bb';
+				} else if(u.indexOf('IEMobile')) {
+					//windows phone
+					version = 'winphone';
+				}
+				return version;
+			}! function(e, t) {
+				function n() {
+					t.body ? t.body.style.fontSize = 12 * o + "px" : t.addEventListener("DOMContentLoaded", n);
+				}
+
+				function d() {
+					var e = i.clientWidth / 10;
+					i.style.fontSize = e + "px";
+				}
+				var i = t.documentElement,
+					o = e.devicePixelRatio || 1;
+				if(n(), d(), e.addEventListener("resize", d), e.addEventListener("pageshow", function(e) {
+						e.persisted && d();
+					}), o >= 2) {
+					var a = t.createElement("body"),
+						s = t.createElement("div");
+					s.style.border = ".5px solid transparent", a.appendChild(s), i.appendChild(a), 1 === s.offsetHeight && i.classList.add("hairlines"), i.removeChild(a);
+				}
+			}(window, document);
+		</script>
+	</body>
+
+</html>
